@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/adam/Projects/Commander/Commander.csproj": {}
+    "C:\\Users\\Adam\\source\\repos\\playground\\Commander\\Commander.csproj": {}
   },
   "projects": {
-    "/Users/adam/Projects/Commander/Commander.csproj": {
+    "C:\\Users\\Adam\\source\\repos\\playground\\Commander\\Commander.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/adam/Projects/Commander/Commander.csproj",
+        "projectUniqueName": "C:\\Users\\Adam\\source\\repos\\playground\\Commander\\Commander.csproj",
         "projectName": "Commander",
-        "projectPath": "/Users/adam/Projects/Commander/Commander.csproj",
-        "packagesPath": "/Users/adam/.nuget/packages/",
-        "outputPath": "/Users/adam/Projects/Commander/obj/",
+        "projectPath": "C:\\Users\\Adam\\source\\repos\\playground\\Commander\\Commander.csproj",
+        "packagesPath": "C:\\Users\\Adam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Adam\\source\\repos\\playground\\Commander\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/adam/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Adam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,11 +40,33 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
+            "Microsoft.AspNetCore.JsonPatch": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.9, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
@@ -79,7 +103,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

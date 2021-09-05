@@ -14,6 +14,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using MySql.Data.MySqlClient;
+using Newtonsoft.Json.Serialization;
 
 namespace Commander
 {
@@ -30,10 +31,13 @@ namespace Commander
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
-            services.AddScoped<ICommanderRepo, MockCommanderRepo>();
-            //services.AddTransient<MySqlConnection>(_ => new MySqlConnection(Configuration.GetConnectionString("CommanderConnection")));
-            services.AddDbContext<CommanderContext>(options=>options.UseMySQL(Configuration.GetConnectionString("CommanderConnection")));
+            services.AddControllers().AddNewtonsoftJson(s => {
+                s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            });
+            
+            services.AddScoped<ICommanderRepo, SqlCommanderRepo>();
+            services.AddDbContext<CommanderContext>(opt=>opt.UseSqlServer(Configuration.GetConnectionString("CommanderConnection")));
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddSwaggerGen(c =>
             {
